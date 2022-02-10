@@ -37,7 +37,7 @@ exports.login = async(req,res) => {
            return res.json({message:"Password is incorrect"}).status(400)
        }
        const userAuthToken = jwt.sign({ _id: user._id }, 'keyboradcat', {
-        expiresIn: '2h',
+        expiresIn: '4000',
     });
     const userLoginData = {
         _id: user._id,

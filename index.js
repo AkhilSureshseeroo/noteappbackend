@@ -1,6 +1,7 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const bodyParser=require('body-parser');
+const cors=require('cors');
 const usersRoutes=require('./routes/userRoute');
 const notesRoutes=require("./routes/notesRoute");
 const url='mongodb+srv://Akhil:mongo4node@db.xfsfd.mongodb.net/users?retryWrites=true&w=majority'
@@ -17,7 +18,7 @@ const app=express();
 const PORT=5000;
 
 app.use(bodyParser.json());
-
+app.use(cors({origin:'http://localhost:4200'}));
 app.use('/users',usersRoutes);
 app.use('/notes',notesRoutes);
 
