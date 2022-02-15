@@ -55,8 +55,8 @@ exports.updateNote = async (req, res) => {
         const{ id} = req.params;
         const noteData = await Notes.updateOne({_id:id},{
             $set:{
-                noteTitle,
-                noteDescription,
+                Title,
+                Description,
             },
 		});
         if (noteData) {
